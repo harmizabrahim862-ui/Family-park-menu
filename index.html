@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Family Park QR Menu</title>
+<style>
+body{margin:0;background:#0f0f0f;color:#fff;font-family:Tahoma,Arial}
+.header{padding:30px;text-align:center;background:linear-gradient(#1a1a1a,#0f0f0f)}
+h1{color:#d4af37;margin:0;font-size:48px}
+.wrap{max-width:1000px;margin:auto;padding:20px}
+.card{background:#181818;border:1px solid #d4af37;border-radius:16px;padding:18px;margin:14px 0}
+h2{color:#d4af37}
+.row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #333}
+button{background:#d4af37;border:0;padding:14px 20px;border-radius:12px;font-size:18px;cursor:pointer}
+.center{text-align:center}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>Family Park</h1>
+<p>QR Voice Menu</p>
+<button onclick="speakMenu()">🔊 تشغيل الترحيب</button>
+</div>
+
+<div class="wrap">
+<div class="card"><h2>المأكولات</h2>
+<div class="row"><span>ورق عنب</span><span>1500</span></div>
+<div class="row"><span>ورق عنب سبيشال</span><span>2000</span></div>
+<div class="row"><span>اصابع بطاطة</span><span>1000</span></div>
+<div class="row"><span>بطاطة حلزونية</span><span>1500</span></div>
+<div class="row"><span>ذرة</span><span>1000</span></div>
+<div class="row"><span>بوشار</span><span>1000</span></div>
+<div class="row"><span>غزل بنات</span><span>1000</span></div>
+</div>
+
+<div class="card"><h2>العصائر الطبيعية</h2>
+<div class="row"><span>موز مع حليب</span><span>3000</span></div>
+<div class="row"><span>فراولة مع حليب</span><span>3000</span></div>
+<div class="row"><span>بطيخ طبيعي</span><span>2000</span></div>
+<div class="row"><span>مكس خاص</span><span>4000</span></div>
+</div>
+
+<div class="card"><h2>VIP</h2>
+<div class="row"><span>وجبة كولا مع اصابع بطاطة</span><span>3500</span></div>
+<div class="row"><span>وجبة كيك مع القهوة</span><span>4000</span></div>
+</div>
+</div>
+
+<script>
+function speakMenu(){
+const t="أهلا وسهلا بكم في فاميلي بارك. جربوا العصائر الطبيعية وعروض في أي بي المميزة. نتمنى لكم وقتا ممتعا.";
+let s=new SpeechSynthesisUtterance(t);
+s.lang="ar-SA";
+speechSynthesis.speak(s);
+}
+window.onload=()=>setTimeout(speakMenu,1000);
+</script>
+</body>
+</html>
